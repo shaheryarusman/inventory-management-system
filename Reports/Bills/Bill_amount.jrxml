@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="de45681e-0d2c-44ed-95ce-683088b0deed">
+	<property name="ireport.zoom" value="0.9090909090909091"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[select * from Bill_Amount]]>
+	</queryString>
+	<field name="Bill_ID" class="java.lang.Integer"/>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="Bill_Amount" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="114" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="227" y="0" width="328" height="33" uuid="66ed6675-a0bb-4ed3-9490-f6cd68549a3a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="AR BLANCA"/>
+				</textElement>
+				<text><![CDATA[Stock Managment System]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="370" y="33" width="120" height="33" forecolor="#333333" uuid="f3024a42-5869-4056-8dc2-9e1407374995"/>
+				<textElement>
+					<font fontName="AR BLANCA"/>
+				</textElement>
+				<text><![CDATA[Bill Records ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="279" height="114" uuid="5b5d6a6b-b29c-467a-8607-0509241386a8"/>
+				<imageExpression><![CDATA["C:\\Users\\Shahyar\\Documents\\NetBeansProjects\\Inventory_managment\\src\\Login\\onScrenLOGO-1.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="298" y="66" width="255" height="33" forecolor="#333333" uuid="0a13b15a-521d-4198-a4f7-77506bdb9ece"/>
+				<textElement>
+					<font fontName="AR BLANCA" size="18"/>
+				</textElement>
+				<text><![CDATA[(Customer name & Bill Amount)]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="a0c9fcce-293a-4fce-a864-7dfc23869a42"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="185" height="27" forecolor="#3333FF" uuid="8d4d5c43-7875-449d-9cd0-bacef0b8ae79"/>
+				<textElement>
+					<font fontName="Adobe Arabic" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bill ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="185" y="19" width="185" height="27" forecolor="#3333FF" uuid="563119e3-e4d4-4144-95b4-0f5f4499f8d5"/>
+				<textElement>
+					<font fontName="Adobe Arabic" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="370" y="19" width="185" height="27" forecolor="#3333FF" uuid="3cd5de40-f556-4f29-98fc-1af3b4d042af"/>
+				<textElement>
+					<font fontName="Adobe Arabic" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bill Amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="b836e62d-6222-4630-9280-95f1fc9ddb43"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="185" height="15" uuid="90a30704-b62f-4aa1-af51-2a3a011a6f96"/>
+				<textFieldExpression><![CDATA[$F{Bill_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="185" y="0" width="185" height="15" uuid="93003b60-de05-47bc-aeb8-4c56cc9c999a"/>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="370" y="0" width="185" height="15" uuid="2ce598c0-d649-4ec9-9c72-bc5ba9c5fffe"/>
+				<textFieldExpression><![CDATA[$F{Bill_Amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="6dc04fc3-cef7-4928-af58-eae1489dccd8"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#000000" uuid="b313ed1d-c8fa-4c6d-bff5-2395cd0e32c4"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#000000" uuid="763c759b-ed3d-4a29-bf91-db69ea28be0d"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" forecolor="#000000" uuid="ba88cabc-1957-4e05-8f77-756ad0940ad3"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
